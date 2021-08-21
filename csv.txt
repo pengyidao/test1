@@ -1,0 +1,40 @@
+import csv
+
+headers = ['class','name','sex','height','year']
+
+rows = [
+        [1,'xiaoming','male',168,23],
+        [1,'xiaohong','female',162,22],
+        [2,'xiaozhang','female',163,21],
+        [2,'xiaoli','male',158,21]
+    ]
+
+with open('test.csv','w', ewline="")as f:
+    f_csv = csv.writer(f)
+    f_csv.writerow(headers)
+    f_csv.writerows(rows)
+import csv
+
+headers = ['class','name','sex','height','year']
+
+rows = [
+        {'class':1,'name':'xiaoming','sex':'male','height':168,'year':23},
+        {'class':1,'name':'xiaohong','sex':'female','height':162,'year':22},
+        {'class':2,'name':'xiaozhang','sex':'female','height':163,'year':21},
+        {'class':2,'name':'xiaoli','sex':'male','height':158,'year':21},
+    ]
+
+with open('test2.csv','w',newline='')as f:
+    f_csv = csv.DictWriter(f,headers)
+    f_csv.writeheader()
+    f_csv.writerows(rows)
+import csv
+with open('test.csv')as f:
+    f_csv = csv.reader(f)
+    for row in f_csv:
+        print(row)
+import csv
+with open('test.csv')as f:
+    f_csv = csv.reader(f)
+    for row in f_csv:
+        print(row[1])
