@@ -1,0 +1,75 @@
+Git 全局设置:
+
+git config --global user.name "pengyidao"
+git config --global user.email "pengyidao@126.com"
+创建 git 仓库:
+
+mkdir cc
+cd cc
+git init
+touch README.md
+git add README.md
+git commit -m "first commit"
+git remote add origin git@gitee.com:pengyidao/cc.git
+git push -u origin master
+已有仓库?
+
+cd existing_git_repo
+git remote add origin git@gitee.com:pengyidao/cc.git
+git push -u origin master
+
+git --version
+查看当前安装版本
+配置提交人姓名
+git config --global user.name 姓名
+配置提交人邮箱
+git config --global user.email 邮箱
+查看git配置信息
+git config --list
+git init（初始化git仓库）
+git status（查看文件状态）
+git add 文件列表（追踪文件）
+将想要被git管理的文件添加到暂存区中
+git commit -m 提交信息（向仓库中提交代码）
+git log（查看提交记录）
+将文件从暂存区中删除：git rm --cached 文件名
+将git仓库中指定的更新记录恢复出来，并且覆盖暂存区和工作目录：
+ git reset --hard commitID
+显示所有远程仓库：
+git remote -v
+添加远程版本库：
+git remote add [shortname] [url]
+主分支（master）
+git branch（查看分支）
+git branch -a（查看本地和远程的所有分支）
+git branch -r（查看远程分支）
+git branch 分支名称（创建分支）
+git checkout 分支名称（切换分支）
+git merge 来源分支（合并分支）
+（删除分支）（分支被合并后才允许删除，-D强制删除）
+git branch -d 分支名称 
+使用场景：分支临时切换
+存储临时改动：git stash
+恢复改动： git stash pop
+A在自己计算机中创建本地仓库
+git init，git status，git add，git commit -m
+git push 远程仓库地址 分支名称
+git push 远程仓库地址别名 分支名称
+git remote add 远程仓库地址别名 远程仓库地址（为远程仓库创建别名）
+
+git push -u 远程仓库地址别名 分支名称
+记住远程仓库别名和分支名称，下次提交只需要git push即可。
+git push -u origin master
+B克隆远程仓库到本地进行开发
+把本地仓库push到github上面
+git clone 仓库地址
+
+A将远程仓库的最新内容拉取到本地
+git pull 远程仓库地址 分支名称
+git pull -all（获取所有远程分支）
+git clone 只在第一次加入开发时使用
+SSH协议通过验证公钥和私钥是否匹配决定验证是否通过
+生成密钥：ssh-keygen
+命令行输入，一路回车
+秘钥存储目录：C:\Users\用户\.ssh
+公钥名称：id_rsa.pub
